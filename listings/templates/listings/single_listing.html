@@ -24,8 +24,8 @@
           <img class="card-img-top img-fluid" src="{{ listing.link_to_image }}" style="width:100%; height: 450px !important;" alt="">
           <div class="card-body">
             <h3 class="card-title">{{ listing.title }}</h3>
-            <h4>$24.99/month</h4>
-
+            <h4>${{ listing.price_per_month }}/month</h4>
+            <h6 class="text-muted">Area: {{ listing.total_area }} sq.ft</h6>
             <p class="card-text">{{ listing.description }}</p>
             <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
             4.0 stars

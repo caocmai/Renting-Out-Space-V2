@@ -21,6 +21,8 @@ class Listing(models.Model):
     modified = models.DateTimeField(auto_now=True,
                                     help_text="The date and time this page was updated. Automatically generated when the model updates.")
 
+    price_per_month = models.IntegerField(help_text="Enter rent price per month")
+    total_area = models.DecimalField(max_digits=7, decimal_places=2, help_text="Enter the total square feet of your space")
     # how_long = models.DurationField()
 
     def __str__(self):

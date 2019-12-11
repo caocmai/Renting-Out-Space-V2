@@ -6,5 +6,5 @@ class ListingForm(forms.ModelForm):
     """ Render and process a form based on the Page model. """
     class Meta:
         model = Listing
-        fields = ("title", "description", "link_to_image")
+        fields = ("title", "description", "link_to_image", "total_area", "price_per_month")
    

@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from register.forms import UserRegistrationForm
 from django.views.generic import CreateView
-
 # Create your views here.
 
 class Test(CreateView):
@@ -17,7 +16,7 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, f'Account created for {username}!')
-            return redirect('blog-home')
+            return redirect('listing-list-page')
     else:
         form = UserRegistrationForm()
     return render(request, 'register/register.html', {'form': form})

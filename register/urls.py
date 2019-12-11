@@ -4,6 +4,6 @@ from register.views import Test, register
 
 urlpatterns = [
     path('', Test.as_view(), name="test-view"),
-    path('new', register, name="sign-up-view"),
+    path('new/', register, name="sign-up-view"),
 
 ]

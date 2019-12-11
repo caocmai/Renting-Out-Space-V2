@@ -141,3 +141,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Listings app settings
 LISTINGS_TITLE_MAX = 500
+
+# added when added user path('accounts/', include('django.contrib.auth.urls')),
+LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/'

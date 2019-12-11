@@ -4,6 +4,6 @@ from listings.views import ListingsListView, ListingCreateView, ListingDetailVie
 
 urlpatterns = [
     path('', ListingsListView.as_view(), name='listing-list-page'),
-    path('new_listing/', ListingCreateView.as_view(), name='listing-create-view'),
+    path('new_listing/', ListingCreateView.as_view(), name='listing-create-page'),
     path('<str:slug>/', ListingDetailView.as_view(), name='listing-details-page'),
 ]
