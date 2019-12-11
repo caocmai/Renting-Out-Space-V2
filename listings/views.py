@@ -18,35 +18,32 @@ class ListingsListView(ListView):
         """ GET a list of Pages. """
         listings = self.get_queryset().all()
         return render(request, 'listings/listings.html', {
-          'pages': listings
+          'listings': listings
         })
 
 class ListingCreateView(CreateView):
 
   form_class = ListingForm
   # success_url = reverse_lazy('list.html')
-  template_name = "new_listing.html"
-
-  # def get(self, request, *args, **kwargs):
-  #   context = {'form': PageForm()}
-  #   return render(request, 'new_wiki.html', context)
+  template_name = 'listings/new_listing.html'
 
   # args and kwards in not needed for this to work
   def post(self, request, *args, **kwargs):
       form = ListingForm(request.POST)
       if form.is_valid():
-          wiki = form.save()
-          wiki.save()
-          return HttpResponseRedirect(reverse_lazy('listing-details-page', args=[wiki.slug]))
+          listing = form.save()
+          listing.save()
+          return HttpResponseRedirect(reverse_lazy('listing-details-page', args=[listing.slug]))
 
 
 class ListingDetailView(DetailView):
     """ Renders a specific page based on it's slug."""
     model = Listing
 
+
     def get(self, request, slug):
         """ Returns a specific wiki page by slug. """
         listing = self.get_queryset().get(slug__iexact=slug)
-        return render(request, 'page.html', {
-          'page': listing
+        return render(request, 'listings/single_listing.html', {
+          'listing': listing
         })

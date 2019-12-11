@@ -26,12 +26,14 @@
                       <a class="nav-link" href="{% url 'listing-list-page' %}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Features</a>
+                    {% if request.user.is_authenticated %}
+                      <a class="nav-link" href="{% url 'listing-create-view' %}">Add a Listing</a>
+                    {% else %}
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="{% url 'sign-up-view' %}">Register</a>
                     </li>
-              
+                    {% endif %}
                   </ul>
                 </div>
               </nav>
