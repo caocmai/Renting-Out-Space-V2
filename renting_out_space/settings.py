@@ -124,9 +124,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 
-# This is neeeded to add to heroku for css and CSS in general
+# This is neeeded to add to HEROKU for css and CSS 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+# This is need for LOCAL css to work, only one of each and not both
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, "staticfiles"), 
 # ]
