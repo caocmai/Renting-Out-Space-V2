@@ -125,10 +125,10 @@ USE_TZ = True
 
 
 # This is neeeded to add to heroku for css and CSS in general
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "staticfiles"), 
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "staticfiles"), 
+# ]
 
 STATIC_URL = '/static/'
