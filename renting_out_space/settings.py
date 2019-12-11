@@ -25,7 +25,7 @@ SECRET_KEY = '!g1sh=op_q!_%*zv32^-raf7fcc!uox3j#rq^qy8@-hf1k55&@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'renting-out-space.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'renting-out-space-new.herokuapp.com']
 
 
 # Application definition
