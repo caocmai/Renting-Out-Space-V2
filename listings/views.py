@@ -5,6 +5,7 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+from django.views.generic import UpdateView, DeleteView
 
 from listings.models import Listing
 from listings.forms import ListingForm
@@ -47,3 +48,13 @@ class ListingDetailView(DetailView):
         return render(request, 'listings/single_listing.html', {
           'listing': listing
         })
+
+class ListingUpdateView(UpdateView):
+  model  = Listing
+  fields = ['title', 'description', 'link_to_image', 'price_per_month', 'total_area']
+  template_name = 'listings/new_listing.html'
+
+class ListingDeleteView(DeleteView):
+  model = Listing
+  success_url = reverse_lazy('listing-list-page')
+  template_name = 'listings/delete_listing.html'

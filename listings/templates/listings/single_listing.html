@@ -24,11 +24,10 @@
           <img class="card-img-top img-fluid" src="{{ listing.link_to_image }}" style="width:100%; height: 450px !important;" alt="">
           <div class="card-body">
             <h3 class="card-title">{{ listing.title }}</h3>
-            <h4>${{ listing.price_per_month }}/month</h4>
+            <h4 class="text-dark">${{ listing.price_per_month }}/month</h4>
             <h6 class="text-muted">Area: {{ listing.total_area }} sq.ft</h6>
             <p class="card-text">{{ listing.description }}</p>
-            <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-            4.0 stars
+            <span class="text-muted">Created: {{ listing.modified }}</span>
             <br><br>
             <a href="#" class="btn btn-success">BOOK</a>
 
@@ -53,8 +52,8 @@
             <hr>
             <br>
             <a href="#" class="btn btn-success">Leave a Review</a>
-            <button type="button" style="position: absolute; right: 0; margin-right: 20px;" class="btn btn-danger">Report</button>
-
+            <a href="{% url 'listing-update-page' listing.slug %}" class="btn btn-info">Update Listing</a>
+            <a href="{% url 'listing-delete-page' listing.slug %}" class="btn btn-danger">Delete Listing</a>
 
           </div>
         </div>

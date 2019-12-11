@@ -5,8 +5,8 @@
             <h4 class="card-title">
               <a class="text-dark" href="{% url 'listing-details-page' listing.slug %}">{{ listing.title }}</a>
             </h4>
-            <h5>${{ listing.price_per_month }}/month</h5>
-            <p class="small text-muted font-italic">{{ listing.description }}</p>
+            <h5 class="text-muted">${{ listing.price_per_month }}/month</h5>
+            <p class="small text-muted font-italic">{{ listing.description | truncatewords_html:10 }}</p>
           </div>
           <div class="card-footer">
             <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
