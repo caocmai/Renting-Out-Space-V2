@@ -25,7 +25,9 @@ SECRET_KEY = '!g1sh=op_q!_%*zv32^-raf7fcc!uox3j#rq^qy8@-hf1k55&@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'renting-out-space-new.herokuapp.com']
+## When pushing to HEROKU need to uncomment
+# ALLOWED_HOSTS = ['localhost','renting-out-space-new.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -123,13 +125,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-
-# This is neeeded to add to HEROKU for css and CSS 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# This is need for LOCAL css to work, only one of each and not both
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, "staticfiles"), 
-# ]
-
 STATIC_URL = '/static/'
+
+### This needs to be uncommented before pushing to HEROKU for CSS to work 
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+### This needs to be uncommented for LOCAL CSS to work, only uncomment ONE of each and NOT both
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "staticfiles"), 
+]
+
