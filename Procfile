@@ -1,0 +1,1 @@
+web: gunicorn renting_out_space.wsgi --log-file -
