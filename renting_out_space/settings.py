@@ -40,8 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'register', 
+    'crispy_forms',
 
+    'register', 
+    'listings', 
 
 ]
 
@@ -135,3 +137,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "staticfiles"), 
 ]
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# Listings app settings
+LISTINGS_TITLE_MAX = 500

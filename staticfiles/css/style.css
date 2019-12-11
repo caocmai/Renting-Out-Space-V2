@@ -5,3 +5,8 @@ body {
 h1 {
     color: orange;
 }
+
+.card-img-top{
+    height: 150px;
+  }
+  
