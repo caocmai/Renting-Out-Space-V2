@@ -1,6 +1,6 @@
 # renting-out-space-v2
 
-A website where users can post listings of a space they want to rent out
+A website where users can post listings of a available spaces they want to rent out
 
 ### Prerequisites
 
@@ -18,7 +18,7 @@ password: admin
 
 Project code can be view by cloneing or forking then open with any IDE
 
-To run project run in terminal
+To run project, run the following in terminal
 ```
 python3 manage.py runserver
 ```
