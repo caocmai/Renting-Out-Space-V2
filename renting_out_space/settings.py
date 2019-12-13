@@ -33,15 +33,16 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # django app
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    # 3rd party app
     'crispy_forms',
-
+    # my app
     'register', 
     'listings', 
 
@@ -129,7 +130,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-### This needs to be uncommented before pushing to HEROKU for CSS to work 
+### This needs to be uncommented before pushing to HEROKU for CSS, static files to work 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 ### This needs to be uncommented for LOCAL CSS to work, only uncomment ONE of each and NOT both
