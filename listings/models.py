@@ -39,3 +39,12 @@ class Listing(models.Model):
             self.slug = slugify(self.title, allow_unicode=True)
 
         return super(Listing, self).save(*args, **kwargs)
+
+class Comment(models.Model):
+    listing = models.ForeignKey(Listing, on_delete=models.PROTECT)
+    username = models.ForeignKey(User, on_delete=models.PROTECT)
+    content = models.TextField(max_length=160)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.content

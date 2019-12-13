@@ -44,6 +44,7 @@ class ListingDetailView(DetailView):
     def get(self, request, slug):
         """ Returns a specific wiki page by slug. """
         listing = self.get_queryset().get(slug__iexact=slug)
+
         return render(request, 'listings/single_listing.html', {
           'listing': listing
         })
@@ -57,3 +58,4 @@ class ListingDeleteView(DeleteView):
   model = Listing
   success_url = reverse_lazy('listing-list-page')
   template_name = 'listings/delete_listing.html'
+
