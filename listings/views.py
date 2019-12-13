@@ -31,9 +31,11 @@ class ListingCreateView(CreateView):
   def post(self, request, *args, **kwargs):
       form = ListingForm(request.POST)
       if form.is_valid():
-          listing = form.save()
-          listing.save()
-          return HttpResponseRedirect(reverse_lazy('listing-details-page', args=[listing.slug]))
+        listing = form.save(commit=False)
+        listing.author = request.user
+        listing = form.save()
+        listing.save()
+        return HttpResponseRedirect(reverse_lazy('listing-details-page', args=[listing.slug]))
 
 
 class ListingDetailView(DetailView):
@@ -50,17 +52,19 @@ class ListingDetailView(DetailView):
         })
 
 class ListingUpdateView(UpdateView):
+  """Update listing"""
   model  = Listing
   fields = ['title', 'description', 'link_to_image', 'price_per_month', 'total_area']
   template_name = 'listings/new_listing.html'
 
 class ListingDeleteView(DeleteView):
+  """Delete a listing"""
   model = Listing
   success_url = reverse_lazy('listing-list-page')
   template_name = 'listings/delete_listing.html'
 
 class CommentCreateView(CreateView):
-
+  """To creat a comment"""
   form_class = CommentForm
   success_url = reverse_lazy('/')
 
@@ -76,6 +80,7 @@ class CommentCreateView(CreateView):
 
 # 
 def add_comment_to_post(request, slug):
+    """Add comment to a post"""
     listing = get_object_or_404(Listing, slug=slug)
     # post = Listing.objects.get(slug=slug)
     form = CommentForm(request.POST)

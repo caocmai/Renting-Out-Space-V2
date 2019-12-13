@@ -28,7 +28,7 @@
             <h5 class="text-dark">${{ listing.price_per_month }}/month</h5>
             <h6 class="text-muted">Area: {{ listing.total_area }} sq.ft</h6>
             <p class="card-text">{{ listing.description }}</p>
-            <span class="text-muted">Created on {{ listing.modified }} by {{ user.username }}</span>
+            <span class="text-muted">Created on {{ listing.modified }} by {{ listing.author }}</span>
             <br><br>
 
           </div>

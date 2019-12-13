@@ -10,6 +10,7 @@ class Test(CreateView):
 
 
 def register(request):
+    """To show a register form so a user can creat account"""
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
