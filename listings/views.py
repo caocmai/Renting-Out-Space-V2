@@ -1,13 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, HttpResponseRedirect
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic import UpdateView, DeleteView, CreateView
 
 from listings.models import Listing
-from listings.forms import ListingForm
+from listings.forms import ListingForm, CommentForm
 # Create your views here.
 
 class ListingsListView(ListView):
@@ -59,3 +59,31 @@ class ListingDeleteView(DeleteView):
   success_url = reverse_lazy('listing-list-page')
   template_name = 'listings/delete_listing.html'
 
+class CommentCreateView(CreateView):
+
+  form_class = CommentForm
+  success_url = reverse_lazy('/')
+
+  template_name = 'listings/new_comment.html'
+
+  # args and kwards in not needed for this to work
+  # def post(self, request, *args, **kwargs):
+  #     form = CommentForm(request.POST)
+  #     if form.is_valid():
+  #         form = form.save()
+  #         form.save()
+  #         return HttpResponseRedirect(reverse_lazy('listing-details-page', args=[form.slug]))
+
+# 
+def add_comment_to_post(request, slug):
+    post = get_object_or_404(Listing, slug=slug)
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = post
+            comment.save()
+            return redirect('listing-details-page', slug=slug)
+    else:
+        form = CommentForm()
+    return render(request, 'listings/new_comment.html', {'form': form})

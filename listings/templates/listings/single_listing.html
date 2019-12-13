@@ -29,7 +29,7 @@
             <p class="card-text">{{ listing.description }}</p>
             <span class="text-muted">Created: {{ listing.modified }}</span>
             <br><br>
-            <a href="#" class="btn btn-success">BOOK</a>
+            <a href="{% url 'comment-create-page' listing.slug %}" class="btn btn-success">Comment</a>
 
           </div>
 
