@@ -4,9 +4,9 @@
 
 
 {% block content %}
-
+<br><br>
 <div class="container">
-    <h2>Creat a new listing below</h2>
+    <h2>Add a comment for "{{ listing.title }}" page</h2>
     <hr>
 <form method="POST">
         {% csrf_token %}

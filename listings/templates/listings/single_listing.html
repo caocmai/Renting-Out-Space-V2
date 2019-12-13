@@ -24,12 +24,11 @@
           <img class="card-img-top img-fluid" src="{{ listing.link_to_image }}" style="width:100%; height: 450px !important;" alt="">
           <div class="card-body">
             <h3 class="card-title">{{ listing.title }}</h3>
-            <h4 class="text-dark">${{ listing.price_per_month }}/month</h4>
+            <h5 class="text-dark">${{ listing.price_per_month }}/month</h5>
             <h6 class="text-muted">Area: {{ listing.total_area }} sq.ft</h6>
             <p class="card-text">{{ listing.description }}</p>
             <span class="text-muted">Created: {{ listing.modified }}</span>
             <br><br>
-            <a href="{% url 'comment-create-page' listing.slug %}" class="btn btn-success">Comment</a>
 
           </div>
 
@@ -41,23 +40,16 @@
             Product Reviews
           </div>
           <div class="card-body">
-            {% for comment in listing.comment_set.all %}
+            {% for comment in listing.comment_set.all reversed %}
 
             <p>{{ comment.content }}</p>
             <small class="text-muted">Posted by: {{ comment.username }} -- {{ comment.timestamp }}</small>
+            <hr>
             {% empty %}
             <p>No comments here yet :(</p>
             {% endfor %}
-
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-            <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-            <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-            <hr>
             <br>
-            <a href="#" class="btn btn-success">Leave a Review</a>
+            <a href="{% url 'comment-create-page' listing.slug %}" class="btn btn-success">Leave a Comment</a>
             <a href="{% url 'listing-update-page' listing.slug %}" class="btn btn-info">Update Listing</a>
             <a href="{% url 'listing-delete-page' listing.slug %}" class="btn btn-danger">Delete Listing</a>
 

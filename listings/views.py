@@ -6,7 +6,7 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic import UpdateView, DeleteView, CreateView
 
-from listings.models import Listing
+from listings.models import Listing, Comment
 from listings.forms import ListingForm, CommentForm
 # Create your views here.
 
@@ -76,14 +76,18 @@ class CommentCreateView(CreateView):
 
 # 
 def add_comment_to_post(request, slug):
-    post = get_object_or_404(Listing, slug=slug)
+    listing = get_object_or_404(Listing, slug=slug)
+    # post = Listing.objects.get(slug=slug)
+    form = CommentForm(request.POST)
+
     if request.method == "POST":
-        form = CommentForm(request.POST)
         if form.is_valid():
-            comment = form.save(commit=False)
-            comment.post = post
-            comment.save()
-            return redirect('listing-details-page', slug=slug)
+          comment = form.save(commit=False)
+          # Need to do this for all forgien keys!!!!!
+          comment.username = request.user
+          comment.listing = listing
+          comment.save()
+          return redirect('listing-details-page', slug=listing.slug)
     else:
         form = CommentForm()
-    return render(request, 'listings/new_comment.html', {'form': form})
+    return render(request, 'listings/new_comment.html', {'form': form, 'listing': listing})
