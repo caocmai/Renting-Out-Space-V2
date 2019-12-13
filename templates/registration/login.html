@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+<br>
     <div class="container">
     <h3>Log In <small class="text-muted">to create a listing!</small></h3>
     <hr>
@@ -8,14 +9,6 @@
         <div class="col">
             {% if form.errors %}
                 <p>Your username and password didn't match. Please try again.</p>
-            {% endif %}
-
-            {% if next %}
-                {% if user.is_authenticated %}
-                    <p>Your account doesn't have access to this page. To proceed, please login with an account that has access.</p>
-                {% else %}
-                    <p>Please login to see this page.</p>
-                {% endif %}
             {% endif %}
 
             <form method="post" action="{% url 'login' %}" class="mx-auto">

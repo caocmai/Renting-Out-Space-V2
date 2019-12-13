@@ -4,7 +4,7 @@
 
 
 {% block content %}
-<br><br>
+<br>
 <div class="container">
     <h2>Add a comment for "{{ listing.title }}" page</h2>
     <hr>
@@ -16,6 +16,7 @@
     {% if request.user.is_authenticated %}
     <input type="submit" value="Save">
     {% else %}
+    <br>
     <h4>Sorry, you can't leave comments without being logged in <br><small class="text-muted">Log in or Sign Up</small></h4>
     <a href="{% url 'login' %}" class="btn btn-secondary ml-2">Log In</a>
     <a href="{% url 'sign-up-page' %}" class="btn btn-info ml-2">Sign Up</a>

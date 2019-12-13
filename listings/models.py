@@ -23,7 +23,6 @@ class Listing(models.Model):
 
     price_per_month = models.IntegerField(help_text="Enter rent price per month")
     total_area = models.DecimalField(max_digits=7, decimal_places=2, help_text="Enter the total square feet of your space")
-    # how_long = models.DurationField()
 
     def __str__(self):
         return self.title
