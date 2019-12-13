@@ -4,9 +4,9 @@ A website where users can post listings of a space they want to rent out
 
 ### Prerequisites
 
-Must have Django 3 and Pythong 2.7 installed
+Must have Django 3 and Python 2.7 installed
 
-You log into admin 
+To log into admin 
 
 ```
 username: admin
@@ -19,9 +19,9 @@ password: admin
 Project code can be view by cloneing or forking then open with any IDE
 
 To run project run in terminal
-'''
+```
 python3 manage.py runserver
-'''
+```
 
 ## Deployment
 
