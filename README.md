@@ -13,7 +13,7 @@ password: admin
 
 ### Installing
 
-Project can be accessed at https://renting-out-space-new.herokuapp.com/
+Project code can be view by cloneing or forking then opened with any IDE
 
 ## Deployment
 
@@ -27,8 +27,7 @@ Project can be accessed at https://renting-out-space-new.herokuapp.com/
 
 ## Authors
 
-* caocmai
-My portfolio can be found at:
+* caocmai - portfolio can be found at:
 https://www.makeschool.com/portfolio/Cao-Mai
 
 ## License
