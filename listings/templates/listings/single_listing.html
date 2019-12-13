@@ -37,7 +37,7 @@
 
         <div class="card card-outline-secondary my-4">
           <div class="card-header">
-            Product Reviews
+            Listing Comments
           </div>
           <div class="card-body">
             {% for comment in listing.comment_set.all reversed %}
@@ -46,7 +46,7 @@
             <small class="text-muted">Posted by: {{ comment.username }} -- {{ comment.timestamp }}</small>
             <hr>
             {% empty %}
-            <p>No comments here yet :(</p>
+            <p>No comments yet</p>
             {% endfor %}
             <br>
             <a href="{% url 'comment-create-page' listing.slug %}" class="btn btn-success">Leave a Comment</a>

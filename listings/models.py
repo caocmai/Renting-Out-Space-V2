@@ -41,7 +41,7 @@ class Listing(models.Model):
         return super(Listing, self).save(*args, **kwargs)
 
 class Comment(models.Model):
-    listing = models.ForeignKey(Listing, on_delete=models.PROTECT)
+    listing = models.ForeignKey(Listing, on_delete=models.CASCADE)
     username = models.ForeignKey(User, on_delete=models.PROTECT)
     content = models.TextField(max_length=160)
     timestamp = models.DateTimeField(auto_now_add=True)
