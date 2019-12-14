@@ -16,9 +16,9 @@ password: admin
 
 ### Installing
 
-Project code can be view by cloneing or forking then open with any IDE
+Project code can be viewed by cloneing or forking then open with any integrated development environment
 
-To run project, run the following in terminal
+To run project in an IDE, run the following in terminal
 ```
 python3 manage.py runserver
 ```
