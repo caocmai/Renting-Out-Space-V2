@@ -8,6 +8,7 @@ from listings.forms import ListingForm
 
 class ListingTestCase(TestCase):
 
+    # Test to sure the slug is created when a listing is created
     def test_page_slugify_on_save(self):
         user = User()
         user.save()
@@ -19,7 +20,8 @@ class ListingTestCase(TestCase):
 
 class ListingViewTests(TestCase):
     
-    def test_specific_page(self):
+    # Test to one specific page when creating a listing
+    def test_one_specific_page(self):
         user = User.objects.create() # This line will both create the user and save it
         listing = Listing(title="A New Listing", description="A short description", price_per_month=120, total_area=234.34, author=user)
         listing.save()
@@ -32,6 +34,7 @@ class ListingViewTests(TestCase):
 class FormPostTest(TestCase):
     """ To test form creation """
 
+    # Test to make sure the listing form is valid
     def test_form(self):
 
         form_info = {

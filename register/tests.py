@@ -5,7 +5,7 @@ from register.forms import UserRegistrationForm
 
 class RegisterViewTest(TestCase):
         
-        
+     # Tests to see that there is a sign up page   
     def test_one_page(self):
         response = self.client.get(reverse_lazy('sign-up-page'))
         self.assertEqual(response.status_code, 200)
@@ -13,7 +13,7 @@ class RegisterViewTest(TestCase):
 
 class FormCreationTest(TestCase):
     """ To test form creation """
-
+    # To test a sign in form is valid
     def test_form(self):
 
         form_info = {
