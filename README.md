@@ -31,6 +31,11 @@ To run project in an IDE, run the following in terminal
 ```
 python3 manage.py runserver
 ```
+## Django Addons
+This project uses the following third party addons
+* [crispy_forms](https://django-crispy-forms.readthedocs.io/en/latest/)
+* [rest_framework](https://www.django-rest-framework.org/) 
+
 
 ## Deployment
 
