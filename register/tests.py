@@ -17,10 +17,10 @@ class FormCreationTest(TestCase):
     def test_form(self):
 
         form_info = {
-            'username': "johndoe",
-            'email': "test@testing.com",
-            'password1': "learncode",
-            'password2': "learncode",
+            'username': 'johndoe',
+            'email': 'test@testing.com',
+            'password1': 'learncode',
+            'password2': 'learncode',
          }
 
         form = UserRegistrationForm(data=form_info)
