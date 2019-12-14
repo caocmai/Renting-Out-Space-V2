@@ -1,6 +1,6 @@
 # renting-out-space-v2
 
-A website where users can post listings of a available spaces they want to rent out
+A website where users can post listings of available spaces they want to rent out
 
 ### Prerequisites
 
