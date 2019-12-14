@@ -14,6 +14,15 @@ email: admin@admin.com
 password: admin
 ```
 
+### Proposal
+I would like to create a web page that would make it possible for people to rent out their unused space for people to store almost anything they like.
+
+I think it's usefull becuase big cities like San Francisco, space is limited and I'm sure lots of people would like some extra space to store their favorite things but just don't have room for it.
+
+An example would be an amature band storing their beloved gear.
+
+For this project I would like to just make it so users can create a post of the space with pictures, descriptions and some additional details they want to rent out and then other users can select the specifc posting that they are interested in renting.
+
 ### Installing
 
 Project code can be viewed by cloneing or forking then open with any integrated development environment
