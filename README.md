@@ -1,4 +1,4 @@
-# renting-out-space-v2
+# Renting Out Space
 
 A website where users can post listings of available spaces they want to rent out
 
