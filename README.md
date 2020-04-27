@@ -4,7 +4,7 @@ A website where users can post listings of available spaces they want to rent ou
 
 ### Prerequisites
 
-Must have Django 3 and Python 2.7 installed
+Must have Django 3 and Python 3.7 installed
 
 To log into admin 
 
